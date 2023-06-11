@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report</title>
+    <style>
+        /* .main {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url({{ url_for('static', filename='background.jpg') }});
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+        } */
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            color: rgb(12, 1, 1);
+            border-bottom: 1px solid #fff;
+            padding-bottom: 10px;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        .no-results {
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+    
+</head>
+<body class="main">
+    <h1>User Information</h1>
+    <p>Username: {{ user.username }}</p>
+    <p>Name: {{ user.name }}</p>
+    <p>Age: {{ user.age }}</p>
+    <p>Gender: {{ user.gender }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Phone: {{ user.phone }}</p>
+    <!-- Include any other relevant user information -->
+    </div>
+
+    <section id="past-results">
+        <h1><br><span>Past Results</span></h1>
+        {% if past_results %}
+            <table>
+                <tr>
+                    <th>Image</th>
+                    <th>Probability(Malignant)</th>
+                    <th>Prediction</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+                {% for result in past_results %}
+                <tr>
+                    <td>
+                        <div class="img-preview">
+                            <img src="data:image/jpeg;base64,{{ result.image }}" alt="Past Result Image">
+                        </div>
+                    </td>
+                    {% if result.probability != 0 %}
+                    <td>{{ result.probability }}</td>
+                    {% else %}
+                    <td>Data not present</td>
+                    {% endif %}
+                    <td style="color: {% if result.prediction == 'Benign' %}green{% else %}red{% endif %}">{{ result.prediction }}</td>
+                    <td>{{ result.datetime }}</td>
+                    <td>{{ result.time }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p class="no-results">No past results found.</p>
+        {% endif %}
+    </section>
+</body>
+</html>

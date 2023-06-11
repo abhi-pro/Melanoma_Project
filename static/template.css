@@ -1,0 +1,70 @@
+.main {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(background.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+}
+
+p {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Past Results */
+
+#past-results table {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    color: #fff;
+}
+
+#past-results table th,
+#past-results table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#past-results table th {
+    background-color: #f82638; /* Cornflower Blue */
+    color: #fff; /* White */
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+}
+
+#past-results table th:hover {
+    background-color: #9e0909; /* Royal Blue */
+}
+
+#past-results table tr:hover {
+    background-color: white;
+    color: black;
+}
+
+#past-results table td {
+    font-weight: bold;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index_style.css') }}">
+    <style>
+      .main {
+        width: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url({{ url_for('static', filename='background.jpg') }});
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+      }
+      </style>      
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">IIT Bombay</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+
+        </div> 
+        <div class="content">
+          <h1><br><span>Melanoma Detection</span> <br>Why Join Us?</h1>
+          <p class="par">Early detection of melanoma is crucial for improved outcomes. Melanoma, a type of skin cancer,<br> can spread quickly if left untreated. Detecting it early increases the chances of successful<br> treatment and complete removal. Timely diagnosis allows for less invasive interventions and <br> reduces the risk of complications. Regular screenings and self-examinations help identify <br> suspicious moles or skin changes, prompting early medical attention. Monitoring individuals <br> at higher risk, like those with a family history or numerous atypical moles, becomes possible <br> with early detection. By emphasizing regular skin checks, self-examinations, and awareness <br> of melanoma signs, early detection plays a vital role in preventing progression and ensuring <br> better long-term prognosis.</p>
+
+
+                <button class="cn"><a href="/register">JOIN US</a></button>
+
+                <form class="form" action="/" method="POST">
+                  <h2>Login Here</h2>
+                  <input type="text" name="username" placeholder="Enter Username Here">
+                  <input type="password" name="password" placeholder="Enter Password Here">
+                  <!-- <button  type="submit">Login</button> -->
+                  <input class="btnn" type="submit" value="Login">
+              
+                  <p class="link">Don't have an account<br>
+                  <a href="/register">Sign up</a> here</p>
+                  <p class="liw">Log in with</p>
+              
+                  <div class="icons">
+                      <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                      <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                      <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                      <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                      <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                  </div>
+                  <!-- Display the error message if it exists -->
+                  {% if error_message %}
+                  <p class="error">{{ error_message }}</p>
+                {% endif %}
+              </form>
+              
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>
