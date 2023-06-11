@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'MelanomaDetectionMTP'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_03644B3157324A24B7713B8D9CAE92FA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0B2B91AFBDD14303AEAE19A41829B75B }}
